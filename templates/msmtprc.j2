@@ -1,0 +1,19 @@
+# - copy this to your configuration file {{ msmtp_config_file_path }}
+
+# account name, used internally by msmtp
+account account1
+host {{ msmtp_host }}
+port {{ msmtp_port }}
+tls on
+tls_starttls {{ msmtp_tls_starttls }}
+auth on
+user {{ msmtp_user }}
+from {{ msmtp_from }}
+{% if msmtp_password is defined %}
+password {{ msmtp_password }}
+{% endif %}
+{% if msmtp_passwordeval is defined %}
+passwordeval {{ msmtp_passwordeval }}
+{% endif %}
+
+account default : account1

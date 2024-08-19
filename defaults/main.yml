@@ -1,0 +1,29 @@
+---
+# Default: ~/.msmtprc or $XDG_CONFIG_HOME/msmtp/config
+msmtp_config_file_group: root
+msmtp_config_file_mode: "0600"
+msmtp_config_file_owner: root
+msmtp_config_file_path: "/root/.msmtprc"
+
+msmtp_host: smtp.gmail.com
+
+# The default is 25 ("smtp"), unless TLS without STARTTLS is used, in which case it is 465 ("smtps").
+msmtp_port: 587
+
+msmtp_tls_starttls: "on"
+
+# Set the user name for authentication
+msmtp_user: gmail_user@gmail.com
+
+# Email sender
+msmtp_from: gmail_user@gmail.com
+
+# Consider using the ‘passwordeval’ command or a key ring instead of this command
+# Refer to the docs of msmtp for more details
+# https://marlam.de/msmtp/msmtp.html
+#msmtp_password: secretpass1234
+
+# Set the password for authentication to the output (stdout) of the command cmd. 
+# This can be used e.g. to decrypt password files on the fly or to query key rings, and thus to avoid storing cleartext passwords.
+# The cmd command must not mess with standard input; if in doubt, append < /dev/null.
+# msmtp_passwordeval:
